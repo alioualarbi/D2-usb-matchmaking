@@ -1,7 +1,5 @@
 # D2-matcmaking
 
-# Destiny Hosting Guide by **Yanis** 💙
-
 ## ⚙️ Requirements
 - VirtualBox (can load multiple guest OSes under a single host operating-system) - [VirtualBox website](https://www.virtualbox.org/)
 - Ubuntu 20.04 server image - [Download image](https://releases.ubuntu.com/20.04/ubuntu-20.04.2-live-server-amd64.iso)
