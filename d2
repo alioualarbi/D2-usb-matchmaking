@@ -1,6 +1,6 @@
 #credits to @BasRaayman and @inchenzo
 
-INTERFACE="eth0"
+INTERFACE="wlan0"
 DEFAULT_NET="192.168.1.0/24"
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -25,8 +25,8 @@ sudo iptables -P FORWARD ACCEPT
 sudo iptables -P OUTPUT ACCEPT
 sudo iptables -F
 sudo iptables -X
-echo -e "${RED}allow interface usb0${NC}"
-  if ip a | grep -q "eth0"; then
+echo -e "${RED}allow interface wlan0${NC}"
+  if ip a | grep -q "wlan0"; then
     if ! sudo iptables-save | grep -q "POSTROUTING -s 192.168.1.0/24"; then
       sudo iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o wlan0 -j MASQUERADE
     fi
