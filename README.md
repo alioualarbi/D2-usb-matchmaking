@@ -21,7 +21,7 @@ sudo su
 ## 🤖 Install the script
 ```bash
 rm *
-wget -q https://raw.githubusercontent.com/alioualarbi/D2-matcmaking/main/d2 -O ./d2
+wget -q https://raw.githubusercontent.com/alioualarbi/D2-usb-matchmaking/main/d2 -O ./d2
 chmod +x ./d2
 
 ## Usage
