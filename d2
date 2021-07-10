@@ -1,7 +1,7 @@
 #credits to @BasRaayman and @inchenzo
 
-INTERFACE="usb0"
-DEFAULT_NET="192.168.149.0/24"
+INTERFACE="eth0"
+DEFAULT_NET="192.168.88.0/24"
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
@@ -26,13 +26,13 @@ sudo iptables -P OUTPUT ACCEPT
 sudo iptables -F
 sudo iptables -X
 echo -e "${RED}allow interface usb0${NC}"
-  if ip a | grep -q "usb0"; then
-    if ! sudo iptables-save | grep -q "POSTROUTING -s 192.168.149.0/24"; then
-      sudo iptables -t nat -A POSTROUTING -s 192.168.149.0/24 -o wlan0 -j MASQUERADE
+  if ip a | grep -q "eth0"; then
+    if ! sudo iptables-save | grep -q "POSTROUTING -s 192.168.88.0/24"; then
+      sudo iptables -t nat -A POSTROUTING -s 192.168.88.0/24 -o wlan0 -j MASQUERADE
     fi
     sudo iptables -A INPUT -p udp -m udp --dport 1194 -j ACCEPT
     sudo iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
-    sudo iptables -A FORWARD -s 10.40.0.0/24 -j ACCEPT
+    sudo iptables -A FORWARD -s 192.168.88.0/24 -j ACCEPT
   fi
 
 read -p "Enter your platform ([xbox], [psn] or [steam]): " platform
