@@ -1,5 +1,5 @@
 # D2-matcmaking
-First credits to @BasRaayman and @inchenzo
+First credits to @BasRaayman and @inchenzo and @yanbxr
 
 ## ⚙️ Requirements
 - VirtualBox (can load multiple guest OSes under a single host operating-system) - [VirtualBox website](https://www.virtualbox.org/)
